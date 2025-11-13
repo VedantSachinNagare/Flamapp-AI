@@ -48,8 +48,20 @@ void Processor::processFrame(const std::vector<uint8_t>& nv21,
     cv::Mat edgesColor;
     cv::cvtColor(edges, edgesColor, cv::COLOR_GRAY2RGBA);
 
-    rgbaOut.resize(static_cast<size_t>(width * height * 4));
-    std::memcpy(rgbaOut.data(), edgesColor.data, rgbaOut.size());
+    const auto expectedSize = static_cast<size_t>(width * height * 4);
+    rgbaOut.resize(expectedSize);
+
+    if (edgesColor.isContinuous()) {
+        std::memcpy(rgbaOut.data(), edgesColor.ptr(), expectedSize);
+    } else {
+        const int rowBytes = width * 4;
+        for (int row = 0; row < height; ++row) {
+            std::memcpy(
+                    rgbaOut.data() + static_cast<size_t>(row) * rowBytes,
+                    edgesColor.ptr(row),
+                    rowBytes);
+        }
+    }
 
     const auto now = std::chrono::steady_clock::now();
     const auto delta =
