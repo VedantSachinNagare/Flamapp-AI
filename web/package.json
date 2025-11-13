@@ -1,0 +1,14 @@
+{
+  "name": "flappai-web-viewer",
+  "version": "1.0.0",
+  "description": "TypeScript viewer for displaying processed OpenCV frames",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && npx http-server ./dist -o"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@types/node": "^20.9.0"
+  }
+}
+
