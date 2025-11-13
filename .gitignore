@@ -1,0 +1,28 @@
+# Android / Gradle
+.gradle/
+.idea/
+local.properties
+*.iml
+/build/
+gradlew
+gradlew.bat
+/app/build/
+/gl/build/
+
+# NDK / CMake
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+
+# macOS / Windows noise
+.DS_Store
+Thumbs.db
+
+# Web artifacts
+web/node_modules/
+web/dist/
+package-lock.json
+
+# Misc
+*.log
+
