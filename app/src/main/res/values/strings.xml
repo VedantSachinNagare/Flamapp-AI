@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FlappAI Vision</string>
+    <string name="camera_permission_needed">Camera permission is required to show the edge detection preview.</string>
+    <string name="camera_permission_rationale">Grant camera access to start the live OpenCV preview.</string>
+    <string name="camera_preview_content_description">Live camera preview surface</string>
+    <string name="opengl_view_content_description">Processed OpenGL texture output</string>
+    <string name="fps_placeholder">FPS: --</string>
+    <string name="resolution_placeholder">Resolution: --</string>
+    <string name="fps_template">FPS: %.1f</string>
+    <string name="resolution_template">Resolution: %1$d x %2$d</string>
+</resources>
+
