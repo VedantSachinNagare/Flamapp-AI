@@ -1,0 +1,3 @@
+rootProject.name = "flappai"
+include(":app", ":gl")
+
